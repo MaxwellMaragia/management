@@ -15,6 +15,11 @@ class CreateActivityLogsTable extends Migration
     {
         Schema::create('activity_log', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('department_id', 100);
+            $table->char('school_id', 100);
+            $table->char('unit_code', 100);
+            $table->char('unit_title', 100);
+            $table->char('transaction_id', 100);
             $table->timestamps();
         });
     }

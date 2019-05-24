@@ -15,6 +15,10 @@ class CreateCourseDetailsTable extends Migration
     {
         Schema::create('course_details', function (Blueprint $table) {
             $table->increments('id');
+            $table->char('school_id',100);
+            $table->char('department_id', 100);
+            $table->char('unit_code', 100);
+            $table->char('unit_name', 100);
             $table->timestamps();
         });
     }
