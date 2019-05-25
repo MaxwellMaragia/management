@@ -14,12 +14,12 @@ class CreateActivityLogsTable extends Migration
     public function up()
     {
         Schema::create('activity_log', function (Blueprint $table) {
-            $table->increments('id');
-            $table->char('department_id', 100);
-            $table->char('school_id', 100);
-            $table->char('unit_code', 100);
-            $table->char('unit_title', 100);
-            $table->char('transaction_id', 100);
+            $table->string('adm_no', 20)->unique();
+            $table->string('department_id', 20);
+            $table->string('school_id', 20);
+            $table->string('unit_code', 20)->unique();
+            $table->string('unit_title', 50);
+            $table->string('transaction_id', 50)->primary();
             $table->timestamps();
         });
     }

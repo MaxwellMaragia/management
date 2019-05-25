@@ -14,10 +14,10 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('student', function (Blueprint $table) {
-            $table->increments('adm_no');
-            $table->char('name', 200);
-            $table->char('school', 200);
-            $table->char('department', 200);
+            $table->string('adm_no',20)->primary();
+            $table->string('name', 100)->unique();
+            $table->string('school', 100);
+            $table->string('department', 100);
             $table->timestamps();
         });
     }

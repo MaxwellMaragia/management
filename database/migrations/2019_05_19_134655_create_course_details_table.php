@@ -14,11 +14,10 @@ class CreateCourseDetailsTable extends Migration
     public function up()
     {
         Schema::create('course_details', function (Blueprint $table) {
-            $table->increments('id');
-            $table->char('school_id',100);
-            $table->char('department_id', 100);
-            $table->char('unit_code', 100);
-            $table->char('unit_name', 100);
+            $table->string('school_id',20)->unique();
+            $table->string('department_id', 20)->unique();
+            $table->string('unit_code', 20)->primary();
+            $table->string('unit_name', 100);
             $table->timestamps();
         });
     }

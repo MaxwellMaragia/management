@@ -14,10 +14,9 @@ class CreateAccountsTable extends Migration
     public function up()
     {
         Schema::create('accounts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->char('adm_no',100);
-            $table->char('transaction_id', 100);
-            $table->text('transaction_type', 100);
+            $table->string('adm_no',20)->unique();
+            $table->string('transaction_id', 20)->primary();
+            $table->text('transaction_type');
             $table->integer('amount');
             $table->integer('balance');
             $table->timestamps();

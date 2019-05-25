@@ -14,10 +14,10 @@ class CreateAdminDetailsTable extends Migration
     public function up()
     {
         Schema::create('admin_details', function (Blueprint $table) {
-            $table->char('staff_id',100);
-            $table->char('name', 200);
-            $table->text('designation', 100);
-            $table->char('school_id', 100);
+            $table->string('staff_id',20)->primary();
+            $table->string('name', 100);
+            $table->text('designation');
+            $table->string('school_id', 20)->unique();
             $table->timestamps();
         });
     }
